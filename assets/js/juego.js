@@ -35,5 +35,17 @@ const pedirCarta = () => {
   return carta;
 };
 
+const valorCarta = (carta) => {
+  const valor = carta.substring(0, carta.length - 1);
+  let puntos = 0;
+
+  if (isNaN(valor)) {
+    return valor === "A" ? 11 : 10;
+  } else {
+    return Number(valor);
+  }
+};
+
 crearDeck();
-pedirCarta();
+let carta = pedirCarta();
+console.log(valorCarta(carta));
