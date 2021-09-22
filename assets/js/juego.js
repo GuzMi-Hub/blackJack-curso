@@ -26,4 +26,14 @@ const crearDeck = () => {
   return deck;
 };
 
+const pedirCarta = () => {
+  if (deck.length === 0) {
+    throw "No ahy cartas en el deck";
+  }
+
+  let carta = deck.pop();
+  return carta;
+};
+
 crearDeck();
+pedirCarta();
