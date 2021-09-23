@@ -47,5 +47,29 @@ const valorCarta = (carta) => {
 };
 
 crearDeck();
-let carta = pedirCarta();
-console.log(valorCarta(carta));
+
+let pedirCartaButton = document.querySelector("#pedir-carta");
+let jugadorCartasContainer = document.querySelector("#jugador-cartas");
+let tablaPuntos = document.querySelectorAll("small");
+let puntos = 0;
+
+pedirCartaButton.addEventListener("click", () => {
+  const carta = pedirCarta();
+
+  puntos += valorCarta(carta);
+
+  tablaPuntos[0].innerText = puntos;
+
+  const cartaImg = document.createElement("img");
+  cartaImg.src = `assets/cartas/${carta}.png`;
+  cartaImg.classList.add("carta");
+  jugadorCartasContainer.append(cartaImg);
+
+  if (puntos > 21) {
+    console.warn("lost");
+    pedirCartaButton.disabled = true;
+  } else if (puntos === 21) {
+    console.warn("21!");
+    pedirCartaButton.disabled = true;
+  }
+});
