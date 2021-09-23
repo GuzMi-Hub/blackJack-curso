@@ -18,21 +18,25 @@
     <div class="row mt-2">
       <div class="col text-center">
         <button class="btn btn-danger" id="nuevo-btn">Nuevo Juego</button>
-        <button class="btn btn-primary" id="pedir-carta">Pedir carta</button>
-        <button class="btn btn-primary" id="detener-btn">Detener</button>
+        <button class="btn btn-primary" disabled="disabled" id="pedir-carta">
+          Pedir carta
+        </button>
+        <button class="btn btn-primary" disabled="disabled" id="detener-btn">
+          Detener
+        </button>
       </div>
     </div>
 
     <div class="row container">
       <div class="col">
         <h1>Jugador 1 - <small>0</small></h1>
-        <div id="jugador-cartas"></div>
+        <div id="jugador-cartas" class="divCartas"></div>
       </div>
     </div>
     <div class="row container">
       <div class="col">
         <h1>Computadora - <small>0</small></h1>
-        <div id="computadora-cartas"></div>
+        <div id="computadora-cartas" class="divCartas"></div>
       </div>
     </div>
     <script src="assets/js/unsercore.js"></script>
